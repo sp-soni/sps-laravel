@@ -1,19 +1,23 @@
 {
-    "name": "spsoni/htmlform",
-    "description": "Generate HTML Form Element using php",
-    "type": "library",
-    "require": {
-        "php": "^8.2"
-    },
-    "autoload": {
-        "psr-4": {
-            "Spsoni\\Htmlform\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Sheetala Prasad Soni",
-            "email": "spsoni.se@gmail.com"
-        }
-    ]
+  "version": "1.0",
+  "name": "spsoni/htmlform",
+  "description": "Generate HTML Form Element using php",
+  "type": "library",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "MIT",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Spsoni\\Htmlform\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Sheetala Prasad Soni",
+      "email": "spsoni.se@gmail.com"
+    }
+  ]
 }
