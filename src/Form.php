@@ -1,5 +1,7 @@
 <?php
 
+namespace SPS;
+
 class Form
 {
 
