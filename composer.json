@@ -1,0 +1,19 @@
+{
+    "name": "spsoni/htmlform",
+    "description": "Generate HTML Form Element using php",
+    "type": "library",
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spsoni\\Htmlform\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sheetala Prasad Soni",
+            "email": "spsoni.se@gmail.com"
+        }
+    ]
+}
