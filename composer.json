@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "name": "sps/htmlform",
+  "name": "spsoni/htmlform",
   "description": "Generate HTML Form Elements using php",
   "type": "library",
   "minimum-stability": "stable",
