@@ -11,7 +11,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Spsoni\\Htmlform\\": "src/"
+      "SPS": "src/"
     }
   },
   "authors": [
