@@ -1,1 +1,3 @@
 /vendor/
+.scannerwork/report-task.txt
+.scannerwork/.sonar_lock
