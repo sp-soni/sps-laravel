@@ -5,7 +5,7 @@ namespace SPS;
 class Form
 {
 
-    public function formDropdown($name, array $aOptions, $selected_value, $htmlOptions = [])
+    public static function dropdown($name, array $aOptions, $selected_value, $htmlOptions = [])
     {
         $htmlOptions['id'] = $name;
         $htmlOptions['name'] = $name;
@@ -26,7 +26,7 @@ class Form
         return $html;
     }
 
-    public function formInput($name, $value, $htmlOptions = [])
+    public static function input($name, $value, $htmlOptions = [])
     {
         $aAttribute = [
             'id' => $name,
@@ -44,7 +44,7 @@ class Form
         return '<input  ' . $attribute . '/>';
     }
 
-    public function formOpen($action = '', array $aAttribute = [])
+    public static function open($action = '', array $aAttribute = [])
     {
         $attribute = '';
         if (!empty($action))
@@ -58,7 +58,7 @@ class Form
         return '<form ' . $attribute . '>';
     }
 
-    public function formClose()
+    public static function close()
     {
         return '</form>';
     }
