@@ -5,28 +5,33 @@ namespace SPS;
 class Form
 {
 
-    public static function dropdown($name, array $aOptions, $selected_value, $htmlOptions = [])
+    public static function select(string $name, array $options, string $value, array $extra = [])
     {
-        $htmlOptions['id'] = $name;
-        $htmlOptions['name'] = $name;
-        $htmlOptions['class'] = empty($htmlOptions['class']) ? 'form-select' : $htmlOptions['class'];
+        $aAttribute = [
+            'id' => $name,
+            'name' => $name,
+            'class' => 'form-control form-select',
+            'type' => 'text'
+        ];
+        $aAttribute = array_merge($aAttribute, $extra);
+
         $attribute = '';
-        foreach ($htmlOptions as $property => $value)
+        foreach ($aAttribute as $property => $value)
         {
             $attribute .= $property . '="' . $value . '" ';
         }
 
         $html = '<select ' . $attribute . '>';
-        foreach ($aOptions as $key => $value)
+        foreach ($options as $key => $value)
         {
-            $selected = ($key == $selected_value) ? 'selected' : '';
+            $selected = ($key == $value) ? 'selected' : '';
             $html .= '<option value="' . $key . '"  ' . $selected . '>' . $value . '</option>';
         }
         $html .= '</select>';
         return $html;
     }
 
-    public static function input($name, $value, $htmlOptions = [])
+    public static function input(string $name, string $value, array $extra = [])
     {
         $aAttribute = [
             'id' => $name,
@@ -35,7 +40,7 @@ class Form
             'class' => 'form-control',
             'type' => 'text'
         ];
-        $aAttribute = array_merge($aAttribute, $htmlOptions);
+        $aAttribute = array_merge($aAttribute, $extra);
         $attribute = '';
         foreach ($aAttribute as $property => $value)
         {
@@ -44,14 +49,14 @@ class Form
         return '<input  ' . $attribute . '/>';
     }
 
-    public static function open($action = '', array $aAttribute = [])
+    public static function open(string $action = '', array $extra = [])
     {
         $attribute = '';
         if (!empty($action))
         {
-            $aAttribute['action'] = $action;
+            $extra['action'] = $action;
         }
-        foreach ($aAttribute as $key => $value)
+        foreach ($extra as $key => $value)
         {
             $attribute .= $key . '="' . $value . '"';
         }
