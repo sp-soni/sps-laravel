@@ -7,7 +7,7 @@
 ## Usage
 
 ```php
-{!! SPS\Form::label(\_\_('message.address'), 'address', true) !!}
+{!! SPS\Form::label(__('message.address'), 'address', true) !!}
 {!! SPS\Form::input('address', old('address'), ['class' => 'form-control']) !!}
 {!! SPS\Form::error($errors, 'address') !!}
 ```
