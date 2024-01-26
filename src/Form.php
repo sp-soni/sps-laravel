@@ -84,7 +84,7 @@ class Form
         return '<input  ' . $attribute . '/>';
     }
 
-    public static function label(string $text, string $for,  array $extra = [], bool $required = false)
+    public static function label(string $text, string $for,  bool $required = false, array $extra = [])
     {
         $aAttribute = [
             'for' => $for,
@@ -96,6 +96,14 @@ class Form
             $text .= '&nbsp;<span class="required">*</span>';
         }
         return '<label  ' . $attribute . '>' . $text . '</label>';
+    }
+
+    public static function error($errors, $fieldName)
+    {
+        if ($errors->has($fieldName))
+        {
+            echo '<div class="text-danger">' . $errors->first($fieldName) . '</div>';
+        }
     }
 
     public static function open(string $action = '', array $aAttribute = [])
