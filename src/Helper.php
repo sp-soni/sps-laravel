@@ -2,7 +2,7 @@
 
 namespace SPS;
 
-class Helper
+class Helper extends SPS
 {
     public static function selectedSelect($left, $right)
     {

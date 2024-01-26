@@ -2,7 +2,7 @@
 
 namespace SPS;
 
-class Form
+class Form extends SPS
 {
 
     private static function arrayToAttribute(array $aAttribute)
