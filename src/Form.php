@@ -33,22 +33,24 @@ class Form extends SPS
         return $value;
     }
 
-    public static function textarea(string $name, string $value, array $extra = [])
+    public static function textarea(string $name, string $value = null, array $extra = [])
     {
+
         $aAttribute = [
             'id' => $name,
             'name' => $name,
             'class' => 'form-control',
-            'row'  => 5,
+            'rows'  => 3,
             'cols' => 50
         ];
         $aAttribute = array_merge($aAttribute, $extra);
 
         $attribute = self::arrayToAttribute($aAttribute);
+        $value = $value ? $value : '';
         return '<textarea ' . $attribute . '>' . $value . '</textarea>';
     }
 
-    public static function select(string $name, array $options, string $value, array $extra = [])
+    public static function select(string $name, array $options, string $selectedValue = null, array $extra = [])
     {
         $aAttribute = [
             'id' => $name,
@@ -63,19 +65,19 @@ class Form extends SPS
         $html = '<select ' . $attribute . '>';
         foreach ($options as $key => $value)
         {
-            $selected = ($key == $value) ? 'selected' : '';
+            $selected = ($key == $selectedValue) ? 'selected' : '';
             $html .= '<option value="' . $key . '"  ' . $selected . '>' . $value . '</option>';
         }
         $html .= '</select>';
         return $html;
     }
 
-    public static function input(string $name, string $value, array $extra = [])
+    public static function input(string $name, string $value = null, array $extra = [])
     {
         $aAttribute = [
             'id' => $name,
             'name' => $name,
-            'value' => $value,
+            'value' => $value ? $value : '',
             'class' => 'form-control',
             'type' => 'text'
         ];
