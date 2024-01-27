@@ -26,7 +26,7 @@ class Form extends SPS
         {
             $value =  $_POST[$key];
         }
-        elseif ($model && property_exists($model, $key))
+        elseif (!empty($model->$key))
         {
             $value =  $model->$key;
         }
@@ -108,12 +108,8 @@ class Form extends SPS
         }
     }
 
-    public static function open(string $action = '', array $aAttribute = [])
+    public static function open(array $aAttribute = [])
     {
-        if (!empty($action))
-        {
-            $aAttribute['action'] = $action;
-        }
         $attribute = self::arrayToAttribute($aAttribute);
         return '<form ' . $attribute . '>';
     }
