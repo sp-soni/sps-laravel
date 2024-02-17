@@ -84,7 +84,39 @@ class Form extends SPS
         $aAttribute = array_merge($aAttribute, $extra);
         $attribute = self::arrayToAttribute($aAttribute);
         return '<input  ' . $attribute . '/>';
-    }
+    }  
+    
+    public static function radio(string $name, string $defaultValue, string $text,string $value = null, array $extra = [])
+    {
+        $aAttribute = [
+            'id' => $name,
+            'name' => $name,
+            'value' => $defaultValue,           
+            'type' => 'radio'
+        ];
+        if($defaultValue==$value){
+            $aAttribute['checked']='checked';
+        }
+        $aAttribute = array_merge($aAttribute, $extra);
+        $attribute = self::arrayToAttribute($aAttribute);
+        return '<label for="'.$aAttribute['id'].'"><input  ' . $attribute . '/>'.$text.'</label>';
+    }  
+
+    public static function checkbox(string $name, string $defaultValue, string $text,string $value = null, array $extra = [])
+    {
+        $aAttribute = [
+            'id' => $name,
+            'name' => $name,
+            'value' => $defaultValue,           
+            'type' => 'checkbox'
+        ];
+        if($defaultValue==$value){
+            $aAttribute['checked']='checked';
+        }
+        $aAttribute = array_merge($aAttribute, $extra);
+        $attribute = self::arrayToAttribute($aAttribute);
+        return '<label for="'.$aAttribute['id'].'"><input  ' . $attribute . '/>'.$text.'</label>';
+    }  
 
     public static function label(string $text, string $for,  bool $required = false, array $extra = [])
     {
